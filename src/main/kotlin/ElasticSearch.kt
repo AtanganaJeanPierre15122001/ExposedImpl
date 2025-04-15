@@ -11,7 +11,8 @@ import org.apache.http.HttpHost
 import org.elasticsearch.client.RestClient
 
 
-fun Application.configureElasticSearch() {
+class configureElasticSearch {
+
     val restClient = RestClient.builder(HttpHost("localhost", 9200, "http")).build()
     val transport = RestClientTransport(restClient, JacksonJsonpMapper())
     val client = ElasticsearchClient(transport)
